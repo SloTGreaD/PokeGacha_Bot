@@ -1,8 +1,13 @@
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+import os
+from dotenv import load_dotenv
 
-MISHA_BOT_API = '5629818025:AAE3CAZFs6uhMcWZodFUdpKhSJu5awmGK_o'
-POKE_BOT_API = "6831587612:AAEUQ4m30-Pajetdnw0AwZ4omaNmzVkc-4o"
+# Загрузка переменных окружения
+load_dotenv()
+
+MISHA_BOT_API = os.getenv('MISHA_BOT_API')
+POKE_BOT_API = os.getenv('POKE_BOT_API')
 
 TOKEN = POKE_BOT_API
 bot = Bot(token=TOKEN)
